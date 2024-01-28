@@ -1,0 +1,53 @@
+// CURSO DE NPM
+
+npm init -> para comenzar un gestor de paquetes package.json  [node.json ]
+
+        en este se pueden configurar descripcion, comandios, autor. licencia y mas.
+        IgÜalmente si lo creamos todo por defecto mas adelante lo podemos cambiar
+
+///     INSTALAR DEPENDENCIAS
+
+npm install [dependencia] -D  -> es una dependencia que solo se va a usar en el entorno de desarrollo 
+
+npm install [dependencia] -S -> es una dependencia que va a ser llevada a produccion  y tambien en el entorno de desarrollo
+
+npm install -g [dependencia]  -> es una dependencia que se va a instalar de forma global
+
+npm list -> muestra las dependencias instaladas en un proyecto
+
+npm list -g  -> muestra las dependencias instaladas a nivel global
+
+/////       INSTALAR VERSIONES ESPECIFICAS
+
+npm install [dependencia] -o  -> instala una dependencia de manera opcional
+
+npm install [dependencia] --dry-run  -> genera una simulacion de instalacion mas no instala nada.  Se utiliza para validar quela instalacion de ese paquete no me vaya a genenrar ningun conflicto
+
+npm install [dependencia]@numero-de-version  -> se utiliza para instalar un paquete con un numero de version especifico para esto debemos conocer la version que queremos instalar
+
+npm install [dependencia]@lastest  -> se utiliza para utilizar la version mas reciente del paquete
+
+///// CREAR SCRIPTS O COMANDOS 
+
+nos dirijimos a package.json y en la seccion de scrips "nombre": "accion a realizar"
+
+                 NOTA: si necesitamos concateat 2 acciones lo haccemos con && [accion1 && accion2]
+
+npm run [nombre del comando] ->  de esta forma ejecutamos dicha accion
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+///////////////  NPX 
+
+Cuando ejecutas un comando utilizando npx, busca el paquete especificado en el directorio node_modules del proyecto actual. Si no encuentra el paquete allí, descarga automáticamente la última versión del paquete desde el registro de npm y lo ejecuta. Esto es útil para ejecutar comandos de paquetes que no están instalados globalmente en tu sistema o para ejecutar comandos de una versión específica de un paquete sin tener que instalar esa versión globalmente.
+
+NPM te permite instalar paquetes en tu proyecto, sin embargo, NPX (Node Package Execute) permite ejecutar un comando de NPM remotamente.
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
