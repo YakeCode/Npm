@@ -21,7 +21,7 @@ npm list -g  -> muestra las dependencias instaladas a nivel global
 
 npm install [dependencia] -o  -> instala una dependencia de manera opcional
 
-npm install [dependencia] --dry-run  -> genera una simulacion de instalacion mas no instala nada.  Se utiliza para validar quela instalacion de ese paquete no me vaya a genenrar ningun conflicto
+npm install [dependencia] --dry-run  -> genera una simulacion de instalacion mas no instala nada.  Se utiliza para validar que la instalacion de ese paquete no me vaya a generar ningun conflicto
 
 npm install [dependencia]@numero-de-version  -> se utiliza para instalar un paquete con un numero de version especifico para esto debemos conocer la version que queremos instalar
 
@@ -47,6 +47,29 @@ NPM te permite instalar paquetes en tu proyecto, sin embargo, NPX (Node Package 
 
 
 ////////////////////////////////////////////////////////////////////////
+
+//////////////// Actualizar, o eliminar dependencias /////////////
+
+npm list : revisamos las dependencias
+
+npm install : para actualizarlas o para ver un resumen de lo que se instala
+
+npm outdate : muestra las dependencias actualizadas 
+                muestra en que version estaba y en cual quedo
+
+////////////////// seguridad y solucion de problemas ///////////
+
+npm audit : muestra cuales don las vulnerabilidades
+
+npm audit --json : muestra un objeto con informacion detsllada de tpdas las vulnerabilidades 
+
+npm audit fix : genera la reparacion de la mayoria de las vulnerabilidades automatica
+
+npm list : actualizamos a la ultima version los que nos sigan arrojando algun problema
+                npm install [dependencia]@lastest
+
+
+
 
 
 
