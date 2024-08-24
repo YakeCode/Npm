@@ -1,0 +1,19 @@
+{
+  "name": "ramdom-words",
+  "version": "1.0.0",
+  "description": "Palabras ramdom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "YakeCode",
+  "license": "MIT",
+  "bin": {
+    "random-words": "./bin/global.js"
+  },
+  "preferGlobal": false,
+  "dependencies": {
+    "g": "^2.0.1"
+  }
+}

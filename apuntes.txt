@@ -68,6 +68,47 @@ npm audit fix : genera la reparacion de la mayoria de las vulnerabilidades autom
 npm list : actualizamos a la ultima version los que nos sigan arrojando algun problema
                 npm install [dependencia]@lastest
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////// Crear un Package (paquete )///////////////////////////
+
+1 buscar que no exista un paquete con el nombre que deseo Crear (https://www.npmjs.com/)
+2 en github, crear un repositorio que tenga el mismo nombre del paquete
+3 clonar repositorio
+4 entrar en el repositorio y darle ->  npm init -y
+5 modificamos los datos necesarios de package.json
+6 creamos una carpeta src
+7 creamos un archivo index.js -> creamos su logica
+8 creamps una carpeta llamada bin -> creamos un archivo global.js y lo configuramos
+9 en package.json
+        
+        "bin": {
+        "random-words": "./bin/global.js" -> nombre del paquete y puntp de acceso a la cfg
+        },
+        "preferGlobal": false -> si quiero que la instalacion sea a nivel global ponemos true
+
+10 probar el paquete
+
+        sudo npm link -> para hacer el enlace del paquete sin publicarlo aun
+        pwd -> copiamos la ruta
+        npm install g [ruta]
+        despues verificamos que el comando de inicio sirva-> el comando lo encontramos en 
+
+                "bin": {
+                "random-words": "bin/global.js"   -> el comando es -> random-words
+                }
+        
+        si el comando esta funcionando bien en nuestro entorno lo cal lo proximo seri apublicarlo
+
+////////////////// Publicar un paquete //////////////
+
+1 crear una cuenta en npm
+2 iniciar sesion en la consola
+        npm a dduser
+        usuario y contraseña
+3 npm publish -> con este comando publicarias el paquete
+    
+
+
 
 
 
