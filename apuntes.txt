@@ -1,15 +1,15 @@
 // CURSO DE NPM
 
-npm init -> para comenzar un gestor de paquetes package.json  [node.json ]
+npm init -> para comenzar un gestor de paquetes package.json  [node.json]
 
-        en este se pueden configurar descripcion, comandios, autor. licencia y mas.
-        IgÜalmente si lo creamos todo por defecto mas adelante lo podemos cambiar
+        en este se pueden configurar descripción, comandos, autor, licencia y más.
+        Igualmente, si lo creamos todo por defecto, más adelante lo podemos cambiar
 
 ///     INSTALAR DEPENDENCIAS
 
 npm install [dependencia] -D  -> es una dependencia que solo se va a usar en el entorno de desarrollo 
 
-npm install [dependencia] -S -> es una dependencia que va a ser llevada a produccion  y tambien en el entorno de desarrollo
+npm install [dependencia] -S -> es una dependencia que va a ser llevada a producción y también en el entorno de desarrollo
 
 npm install -g [dependencia]  -> es una dependencia que se va a instalar de forma global
 
@@ -17,96 +17,100 @@ npm list -> muestra las dependencias instaladas en un proyecto
 
 npm list -g  -> muestra las dependencias instaladas a nivel global
 
-/////       INSTALAR VERSIONES ESPECIFICAS
+/////       INSTALAR VERSIONES ESPECÍFICAS
 
 npm install [dependencia] -o  -> instala una dependencia de manera opcional
 
-npm install [dependencia] --dry-run  -> genera una simulacion de instalacion mas no instala nada.  Se utiliza para validar que la instalacion de ese paquete no me vaya a generar ningun conflicto
+npm install [dependencia] --dry-run  -> genera una simulación de instalación, mas no instala nada. Se utiliza para validar que la instalación de ese paquete no me vaya a generar ningún conflicto
 
-npm install [dependencia]@numero-de-version  -> se utiliza para instalar un paquete con un numero de version especifico para esto debemos conocer la version que queremos instalar
+npm install [dependencia]@número-de-versión  -> se utiliza para instalar un paquete con un número de versión específico, para esto debemos conocer la versión que queremos instalar
 
-npm install [dependencia]@lastest  -> se utiliza para utilizar la version mas reciente del paquete
+npm install [dependencia]@latest  -> se utiliza para instalar la versión más reciente del paquete
 
 ///// CREAR SCRIPTS O COMANDOS 
 
-nos dirijimos a package.json y en la seccion de scrips "nombre": "accion a realizar"
+Nos dirigimos a package.json y en la sección de scripts "nombre": "acción a realizar"
 
-                 NOTA: si necesitamos concateat 2 acciones lo haccemos con && [accion1 && accion2]
+                 NOTA: si necesitamos concatenar 2 acciones lo hacemos con && [acción1 && acción2]
 
-npm run [nombre del comando] ->  de esta forma ejecutamos dicha accion
+npm run [nombre del comando] -> de esta forma ejecutamos dicha acción
 
-
-/////////////////////////////////////////////////////////////////////
-
-
-///////////////  NPX 
+///////////////////////  NPX   //////////////////////
 
 Cuando ejecutas un comando utilizando npx, busca el paquete especificado en el directorio node_modules del proyecto actual. Si no encuentra el paquete allí, descarga automáticamente la última versión del paquete desde el registro de npm y lo ejecuta. Esto es útil para ejecutar comandos de paquetes que no están instalados globalmente en tu sistema o para ejecutar comandos de una versión específica de un paquete sin tener que instalar esa versión globalmente.
 
 NPM te permite instalar paquetes en tu proyecto, sin embargo, NPX (Node Package Execute) permite ejecutar un comando de NPM remotamente.
 
 
-////////////////////////////////////////////////////////////////////////
-
-//////////////// Actualizar, o eliminar dependencias /////////////
+//////////////// Actualizar o eliminar dependencias /////////////
 
 npm list : revisamos las dependencias
 
 npm install : para actualizarlas o para ver un resumen de lo que se instala
 
-npm outdate : muestra las dependencias actualizadas 
-                muestra en que version estaba y en cual quedo
+npm outdated : muestra las dependencias actualizadas
+                muestra en qué versión estaba y en cuál quedó
 
-////////////////// seguridad y solucion de problemas ///////////
+////////////////// Seguridad y solución de problemas ///////////
 
-npm audit : muestra cuales don las vulnerabilidades
+npm audit : muestra cuáles son las vulnerabilidades
 
-npm audit --json : muestra un objeto con informacion detsllada de tpdas las vulnerabilidades 
+npm audit --json : muestra un objeto con información detallada de todas las vulnerabilidades 
 
-npm audit fix : genera la reparacion de la mayoria de las vulnerabilidades automatica
+npm audit fix : genera la reparación de la mayoría de las vulnerabilidades automáticamente
 
-npm list : actualizamos a la ultima version los que nos sigan arrojando algun problema
-                npm install [dependencia]@lastest
+npm list : actualizamos a la última versión los que nos sigan arrojando algún problema
+                npm install [dependencia]@latest
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////// Crear un Package (paquete )///////////////////////////
+///////////////////////// Crear un Package (paquete) ///////////////////////////
 
-1 buscar que no exista un paquete con el nombre que deseo Crear (https://www.npmjs.com/)
-2 en github, crear un repositorio que tenga el mismo nombre del paquete
-3 clonar repositorio
-4 entrar en el repositorio y darle ->  npm init -y
-5 modificamos los datos necesarios de package.json
-6 creamos una carpeta src
-7 creamos un archivo index.js -> creamos su logica
-8 creamps una carpeta llamada bin -> creamos un archivo global.js y lo configuramos
-9 en package.json
+1. Buscar que no exista un paquete con el nombre que deseo crear (https://www.npmjs.com/)
+2. En GitHub, crear un repositorio que tenga el mismo nombre del paquete
+3. Clonar repositorio
+4. Entrar en el repositorio y darle ->  npm init -y
+5. Modificamos los datos necesarios de package.json
+6. Creamos una carpeta src
+7. Creamos un archivo index.js -> creamos su lógica
+8. Creamos una carpeta llamada bin -> creamos un archivo global.js y lo configuramos
+9. En package.json
         
         "bin": {
-        "random-words": "./bin/global.js" -> nombre del paquete y puntp de acceso a la cfg
+        "random-words": "./bin/global.js" -> nombre del paquete y punto de acceso a la cfg
         },
-        "preferGlobal": false -> si quiero que la instalacion sea a nivel global ponemos true
+        "preferGlobal": false -> si quiero que la instalación sea a nivel global, ponemos true
 
-10 probar el paquete
+10. Probar el paquete
 
-        sudo npm link -> para hacer el enlace del paquete sin publicarlo aun
+        sudo npm link -> para hacer el enlace del paquete sin publicarlo aún
         pwd -> copiamos la ruta
-        npm install g [ruta]
-        despues verificamos que el comando de inicio sirva-> el comando lo encontramos en 
+        npm install -g [ruta]
+        Después verificamos que el comando de inicio sirva -> el comando lo encontramos en 
 
                 "bin": {
                 "random-words": "bin/global.js"   -> el comando es -> random-words
                 }
         
-        si el comando esta funcionando bien en nuestro entorno lo cal lo proximo seri apublicarlo
+        Si el comando está funcionando bien en nuestro entorno local, lo próximo sería publicarlo
 
 ////////////////// Publicar un paquete //////////////
 
-1 crear una cuenta en npm
-2 iniciar sesion en la consola
-        npm a dduser
+1. Crear una cuenta en npm
+2. Iniciar sesión en la consola
+        npm adduser
         usuario y contraseña
-3 npm publish -> con este comando publicarias el paquete
-    
+3. npm publish -> con este comando publicarías el paquete
+
+ ///////// VERSIONADO DE PAQUETES Y PAQUETES PRIVADOS ///////////
+ Versionado semántico -> (https://semver.org/lang/es/)
+        Se explica cómo funciona y cómo se debe generar el versionado de los paquetes 
+1. Hacemos los cambios y cambiamos también el número de versión en el package
+2. Subimos los cambios al repositorio
+3. npm version [versión que cambiamos]
+4. npm publish -> publica la nueva versión 
+
+//// También se pueden crear paquetes privados ////
+
+
 
 
 
